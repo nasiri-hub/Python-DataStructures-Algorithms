@@ -112,17 +112,57 @@ Both **singly** and **doubly** linked lists can be **circular**, which means the
 ## Getting Started 
 ```python
 def main():
-    l = LinkedList()
-    l.add_first(10)
-    l.add_last(20)
-    l.remove_first()
-    l.remove_last()
-    l.print(convert=True)
-    print(l.get_size())
-    print(l.to_array())
-    print(l.reverse())
-    print(l.get_kth_from_the_end(0))
+    ll = LinkedList()
+    ll.add_first(10)
+    ll.add_last(20)
+    ll.remove_first()
+    ll.remove_last()
+    ll.print(convert=True)
+    print(ll.get_size())
+    print(ll.to_array())
+    print(ll.reverse())
+    print(ll.get_kth_from_the_end(0))
 
 if __name__ == '__main__':
     main()
 ```
+
+
+# - Hash Tables (Dictionaries)
+
+##### **Used for :**
+- **Spell checkers**
+- **Dictionary**
+- **Compilers**
+- **Code editors**
+##### **Operations Support:**
+- **Insert ——> O(1)**
+- **Lookup ——> O(1)**
+- **Delete ——> O(1)**
+
+**Entry:** Consists of a key and a value, forming a key-value pair.
+
+**Key:** Unique for each entry in the Hash Map. Used to generate a hash code determining the entry's bucket in the Hash Map. This ensures that every entry can be efficiently located.
+
+**Hash Code:** A number generated from an entry's key, to determine what bucket that Hash Map entry belongs to.
+
+**Bucket:** A Hash Map consists of many such buckets, or containers, to store entries.
+
+**Value:** Can be nearly any kind of information, like name, birth date, and address of a person. The value can be many different kinds of information combined.
+
+## Hash Functions :
+
+When we insert a key value pair in **Hash Table** , hash table will get the key and base on the key, it figure out where to store the value in memory,. More accurate terms **hash table will map the key to an index value**. This is the job of **Hash Function**.
+
+**Hash Function** is the function that gets the value, and maps it to a **hash value | hash code**.
+The number returned by the hash function is called the **hash code**.
+
+## Collisions :
+
+It is possible two distinct key generate same hash value.
+##### Two ways to handle collisions :
+
+- **1. Chaining**: 
+	have each cell in an array point to a linked list and store value in linked lists, if we have the collision simplicity add the new item at end of the linked lists.
+- **2. Open Addressing**:
+	Find different slot | new address for storing second value.
