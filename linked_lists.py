@@ -94,7 +94,7 @@ class LinkedList:
             print(current.data, end=' -> ')
             current = current.next
 
-    # Interview Question
+    # **Reversing the Linked lists
     def reverse(self):
         if self.is_empty():
             raise IndexError('List is empty.')
@@ -108,25 +108,16 @@ class LinkedList:
 
         self.head = previous
 
-    # Interview Question
-    def get_kth_from_the_end(self, k: int):
-        if (self.is_empty()) or (k <= 0):
-            raise ValueError('Invalid value')
-        first = self.head
-        second = self.head
-        for _ in range(1, k):
-            if second.next is None:
-                raise ValueError('Invalid value')
-            second = second.next
-        while second.next is not None:
-            first = first.next
-            second = second.next
-
-        return first.data
-
 
 def main():
     ll = LinkedList()
+    ll.add_first(10)
+    ll.add_last(20)
+    ll.add_last(30)
+    ll.add_last(40)
+
+    ll.reverse()
+    ll.print(convert=True)
 
 
 if __name__ == '__main__':
